@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ darkMode: true }" :class="{ 'dark': darkMode }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yakshi Shakya | SEO Technical & Content Writer Portfolio</title>
+    
+    <!-- SEO & SCHEMA MARKUP -->
+    <meta name="description" content="Portfolio of Yakshi Shakya, an experienced SEO Technical and Content Writer at Kreative Werbung Lab specializing in AI-driven lead generation and organic visibility.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yakshi Shakya",
+      "jobTitle": "SEO Technical and Content Writer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Kreative Werbung Lab"
+      },
+      "url": "https://www.linkedin.com/in/yakshi-shakya-64809a257",
+      "email": "yakshishakya826@gmail.com",
+      "telephone": "+919990418416",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Delhi",
+        "addressCountry": "INDIA"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Deen Dayal Upadhyaya College, University of Delhi"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        [x-cloak] { display: none !important; }
+        .hero-glow-dark:hover {
+            box-shadow: 0 0 40px 10px rgba(99, 102, 241, 0.3);
+        }
+        .hero-glow-light:hover {
+            box-shadow: 0 0 40px 10px rgba(99, 102, 241, 0.18);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-[#0F172A] text-slate-900 dark:text-[#F8FAFC] antialiased relative overflow-x-hidden selection:bg-[#6366F1] selection:text-white transition-colors duration-300" x-data="{ openResume: false, showSuccessModal: false, mobileMenu: false }">
+
+    <!-- FLOATING GRADIENT BLOBS -->
+    <div class="absolute top-[-5%] left-[-10%] w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-[#6366F1]/10 rounded-full blur-[70px] sm:blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-[35%] right-[-10%] w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-[#8B5CF6]/10 rounded-full blur-[90px] sm:blur-[150px] pointer-events-none"></div>
+    <div class="absolute bottom-[10%] left-[10%] w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-[#06B6D4]/10 rounded-full blur-[80px] sm:blur-[130px] pointer-events-none"></div>
+
+    <!-- PREMIUM STICKY NAVIGATION BAR -->
+    <nav class="sticky top-0 w-full z-50 bg-slate-50/80 dark:bg-[#0F172A]/80 backdrop-blur-md border-b border-slate-200 dark:border-[#1E293B] transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-3.5 flex items-center justify-between">
+            <!-- Brand Logo Signature -->
+            <a href="#" class="text-lg font-extrabold tracking-tight bg-clip-text text-slate-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-white dark:to-[#6366F1]">
+                YS<span class="text-[#6366F1]">.</span>
+            </a>
+
+            <!-- Desktop Link Channels -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-[#94A3B8]">
+                <a href="#about" class="hover:text-[#6366F1] dark:hover:text-white transition-colors">About</a>
+                <a href="#expertise" class="hover:text-[#6366F1] dark:hover:text-white transition-colors">Expertise</a>
+                <a href="#experience" class="hover:text-[#6366F1] dark:hover:text-white transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-[#6366F1] dark:hover:text-white transition-colors">Case Studies</a>
+                <a href="#insights" class="hover:text-[#6366F1] dark:hover:text-white transition-colors">LinkedIn Feed</a>
+                <a href="#contact" class="hover:text-[#6366F1] dark:hover:text-white transition-colors">Contact</a>
+            </div>
+
+            <!-- Header Utilities (Theme Toggle & Burger icon) -->
+            <div class="flex items-center gap-3">
+                <button @click="darkMode = !darkMode" class="p-2 rounded-full bg-slate-200 dark:bg-[#1E293B] text-slate-700 dark:text-amber-400 border border-slate-300 dark:border-[#334155] shadow-sm transition-transform hover:scale-105" aria-label="Toggle Theme">
+                    <svg x-show="darkMode" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707m2.828 5.657a4 4 0 118 0 4 4 0 01-8 0z"></path></svg>
+                    <svg x-show="!darkMode" x-cloak class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+
+                <!-- Responsive Burger Menu Vector Switch -->
+                <button @click="mobileMenu = !mobileMenu" class="md:hidden p-2 text-slate-700 dark:text-[#94A3B8] focus:outline-none" aria-label="Toggle Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" x-show="!mobileMenu">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" x-show="mobileMenu" x-cloak>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Link Expansion Overlay -->
+        <div x-show="mobileMenu" x-transition x-cloak class="md:hidden border-t border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] px-6 py-4 space-y-3 shadow-inner flex flex-col text-sm font-medium text-slate-600 dark:text-[#94A3B8]">
+            <a href="#about" @click="mobileMenu = false" class="hover:text-[#6366F1] py-1">About</a>
+            <a href="#expertise" @click="mobileMenu = false" class="hover:text-[#6366F1] py-1">Expertise</a>
+            <a href="#experience" @click="mobileMenu = false" class="hover:text-[#6366F1] py-1">Experience</a>
+            <a href="#projects" @click="mobileMenu = false" class="hover:text-[#6366F1] py-1">Case Studies</a>
+            <a href="#insights" @click="mobileMenu = false" class="hover:text-[#6366F1] py-1">LinkedIn Feed</a>
+            <a href="#contact" @click="mobileMenu = false" class="hover:text-[#6366F1] py-1 text-slate-900 dark:text-white">Contact</a>
+        </div>
+    </nav>
+
+    <!-- SPLIT HERO SECTION -->
+    <section class="min-h-[calc(100vh-80px)] flex items-center px-4 sm:px-6 md:px-12 relative z-10 max-w-6xl mx-auto"
+             x-data="{ 
+                words: ['SEO Technical Writer', 'Growth Marketer', 'Content Strategist', 'SEO Specialist'], 
+                currentWord: '', 
+                wordIndex: 0, 
+                charIndex: 0, 
+                isDeleting: false,
+                revealPhoto: false,
+                type() {
+                    let current = this.words[this.wordIndex];
+                    if (this.isDeleting) {
+                        this.currentWord = current.substring(0, this.charIndex - 1);
+                        this.charIndex--;
+                    } else {
+                        this.currentWord = current.substring(0, this.charIndex + 1);
+                        this.charIndex++;
+                    }
+
+                    if(this.charIndex > 0) { this.revealPhoto = true; }
+
+                    let typeSpeed = this.isDeleting ? 50 : 100;
+
+                    if (!this.isDeleting && this.currentWord === current) {
+                        typeSpeed = 1500;
+                        this.isDeleting = true;
+                    } else if (this.isDeleting && this.currentWord === '') {
+                        this.isDeleting = false;
+                        this.wordIndex = (this.wordIndex + 1) % this.words.length;
+                        typeSpeed = 500;
+                    }
+
+                    setTimeout(() => this.type(), typeSpeed);
+                }
+             }" x-init="setTimeout(() => type(), 300)">
+        
+        <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center w-full text-center md:text-left">
+            <!-- Left Side: Profile Picture -->
+            <div class="md:col-span-5 flex justify-center md:justify-start">
+                <div class="relative group transition-all duration-700 ease-out transform"
+                     :class="revealPhoto ? 'opacity-100 scale-100' : 'opacity-0 scale-95'" x-cloak>
+                    <div class="absolute inset-0 bg-gradient-to-tr from-[#6366F1] to-[#06B6D4] rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <img src="https://i.ibb.co/Gvd2B8qH/Yakshi-Shakya.png" alt="Yakshi Shakya" 
+                         class="w-48 h-64 sm:w-64 sm:h-84 md:w-80 md:h-96 rounded-2xl object-cover border border-slate-300 dark:border-[#6366F1] relative z-10 transition-all duration-300 object-top shadow-2xl"
+                         :class="darkMode ? 'hero-glow-dark' : 'hero-glow-light'">
+                </div>
+            </div>
+
+            <!-- Right Side: Content -->
+            <div class="md:col-span-7 space-y-6">
+                <div>
+                    <span class="text-[#6366F1] dark:text-[#06B6D4] font-semibold tracking-wider uppercase text-xs sm:text-sm block mb-3">
+                        Digital Marketing Strategist • SEO Specialist • Growth Marketer
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-[#F8FAFC] dark:via-[#6366F1] dark:to-[#8B5CF6] mb-4">
+                        Hi, I'm Yakshi Shakya
+                    </h1>
+                    <p class="text-lg sm:text-2xl md:text-3xl text-slate-600 dark:text-[#94A3B8] font-medium leading-relaxed h-16 md:h-20">
+                        I help brands grow through <br class="sm:hidden"/>
+                        <span class="text-[#6366F1] font-semibold" x-text="currentWord"></span>
+                        <span class="animate-pulse text-[#6366F1] dark:text-[#06B6D4]">|</span>
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 w-full pt-4">
+                    <a href="#projects" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] hover:from-[#5152DF] hover:to-[#7C4BE2] text-white rounded-full font-medium shadow-lg shadow-[#6366F1]/20 flex items-center justify-center gap-2 group transition-all duration-300 transform active:scale-95">
+                        View My Work 
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                    <button @click="openResume = true" class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-[#0F172A] text-slate-800 dark:text-[#F8FAFC] border border-slate-300 dark:border-[#94A3B8]/20 hover:border-[#6366F1] rounded-full font-medium flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-95 shadow-sm">
+                        View & Download Resume 
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    </button>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-slate-200 dark:bg-[#1E293B] text-slate-800 dark:text-[#F8FAFC] hover:bg-slate-300 dark:hover:bg-[#1E293B]/80 rounded-full font-medium flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-95">
+                        Let's Connect
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-slate-200 dark:border-[#1E293B] max-w-6xl mx-auto" />
+
+    <!-- ABOUT ME & STRATEGIC INSIGHT MATRIX -->
+    <section id="about" class="py-16 sm:py-24 px-4 sm:px-6 max-w-5xl mx-auto relative z-10 space-y-12">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div class="space-y-4">
+                <h2 class="text-2xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600 dark:from-[#F8FAFC] dark:to-[#94A3B8]">
+                    About Me
+                </h2>
+                <div class="space-y-4 text-sm sm:text-base text-slate-600 dark:text-[#94A3B8] leading-relaxed">
+                    <p>
+                        I am a <strong class="text-slate-900 dark:text-[#F8FAFC]">Digital Marketing Professional</strong> passionate about helping businesses grow online through strategic SEO, content marketing, and audience-focused campaigns.
+                    </p>
+                    <p>
+                        Yakshi Shakya is an SEO Technical and Content Writer at <strong class="text-slate-900 dark:text-[#F8FAFC]">Kreative Werbung Lab</strong>, based out of Delhi, India. Her role heavily leverages artificial intelligence (AI) modes and SaaS tools to streamline lead generation and optimize digital marketing and SEO content.
+                    </p>
+                </div>
+            </div>
+
+            <div class="p-6 bg-slate-100 dark:bg-[#1E293B]/60 border border-slate-200 dark:border-[#1E293B] rounded-2xl space-y-4 text-sm sm:text-base text-slate-600 dark:text-[#94A3B8]">
+                <p>
+                    As a professional content writer and SEO specialist based in the Delhi NCR region, I am an alumna of Deen Dayal Upadhyaya College (University of Delhi) and regularly publish feature articles and mental health research pieces.
+                </p>
+                <div class="pt-2 space-y-2">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-[#6366F1]">Digital Research Footprint:</h4>
+                    <div class="flex flex-col gap-2 text-xs">
+                        <a href="https://lyfsmile.com" target="_blank" class="flex items-center gap-2 text-[#6366F1] dark:text-[#06B6D4] hover:underline font-medium">
+                            <span>🚀 Career Portfolio: Explore latest articles on Lyfsmile News Platform</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/yakshi-shakya-64809a257" target="_blank" class="flex items-center gap-2 text-[#6366F1] dark:text-[#06B6D4] hover:underline font-medium">
+                            <span>💼 Professional Network: Connect on LinkedIn Profile</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Focus Grid -->
+        <div class="bg-white dark:bg-[#0B1222] border border-slate-200 dark:border-[#1E293B] rounded-2xl p-6 sm:p-8">
+            <h3 class="text-lg sm:text-xl font-bold mb-6 text-[#6366F1]">Core AI & SEO Strategy Focus:</h3>
+            <div class="grid sm:grid-cols-3 gap-6">
+                <div class="space-y-2">
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Content Optimization</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8]">Using intelligent AI platforms for accelerated content drafting framework adjustments and precise keyword data optimization.</p>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Lead Strategy</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8]">Applying custom AI-assisted performance parameters and computational data grids to aggressively scale lead-oriented corporate growth.</p>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Process Automation</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8]">Streamlining high-velocity deployment models and structural execution maps with SaaS tools to optimize target sales output pipelines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE EXPERTISE -->
+    <section id="expertise" class="py-16 sm:py-24 bg-slate-100 dark:bg-[#0B1222] px-4 sm:px-6 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">Core Expertise</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
+                <script>
+                    const skills = ["SEO Optimization", "Technical SEO", "Keyword Research", "Content Writing", "Link Building", "Social Media Campaigns", "SaaS Tools", "Google Analytics", "Google Search Console", "WordPress", "AI Platforms", "Lead Generation"];
+                    skills.forEach(skill => {
+                        document.write(`
+                            <div class="p-3 sm:p-5 bg-white dark:bg-[#0F172A] border border-slate-200 dark:border-[#1E293B] hover:border-[#6366F1] rounded-xl sm:rounded-2xl flex items-center gap-2 sm:gap-3 hover:-translate-y-1 transition-all duration-300 shadow-sm">
+                                <svg class="w-3 h-3 sm:w-4 sm:h-4 text-[#6366F1] dark:text-[#06B6D4] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="font-medium text-xs sm:text-sm text-slate-800 dark:text-[#F8FAFC]">${skill}</span>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE TIMELINE -->
+    <section id="experience" class="py-16 sm:py-24 px-4 sm:px-6 max-w-4xl mx-auto relative z-10">
+        <h2 class="text-2xl sm:text-4xl font-bold mb-8 sm:mb-12">Experience</h2>
+        <div class="relative border-l-2 border-slate-200 dark:border-[#1E293B] pl-4 sm:pl-8 ml-2 sm:ml-4 space-y-12">
+            
+            <!-- Company 1: Kreative Werbung Lab -->
+            <div class="relative">
+                <div class="absolute w-3.5 h-3.5 bg-[#06B6D4] rounded-full -left-[23px] sm:-left-[39px] top-1.5 shadow-[0_0_12px_#06B6D4]"></div>
+                <span class="text-xs font-semibold text-[#06B6D4] tracking-wider uppercase block mb-1">Present</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-[#F8FAFC]">SEO Technical & Content Writer</h3>
+                <h4 class="text-sm sm:text-lg text-[#8B5CF6] font-medium mb-3">Kreative Werbung Lab</h4>
+                <ul class="space-y-2 text-slate-600 dark:text-[#94A3B8] text-xs sm:text-sm">
+                    <li class="flex items-start gap-2">✔ Leveraging advanced generative AI architecture and enterprise SaaS environments for scaling content strategy blueprints.</li>
+                    <li class="flex items-start gap-2">✔ Designing intent-focused content funnels to streamline organic corporate B2B lead generation streams.</li>
+                </ul>
+            </div>
+
+            <!-- Company 2: A2S Ventures -->
+            <div class="relative">
+                <div class="absolute w-3.5 h-3.5 bg-[#6366F1] rounded-full -left-[23px] sm:-left-[39px] top-1.5 shadow-[0_0_12px_#6366F1]"></div>
+                <span class="text-xs font-semibold text-slate-400 dark:text-[#94A3B8] tracking-wider uppercase block mb-1">Jul 2024 - Dec 2025 (1.5 Years)</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-[#F8FAFC]">SEO and Social Media Executive</h3>
+                <h4 class="text-sm sm:text-lg text-slate-500 dark:text-[#94A3B8] font-medium mb-3">A2S Ventures LLP</h4>
+                <ul class="space-y-2 text-slate-600 dark:text-[#94A3B8] text-xs sm:text-sm">
+                    <li class="flex items-start gap-2">✔ Handled end-to-end On-Page, Off-Page, and Technical SEO audit protocols.</li>
+                    <li class="flex items-start gap-2">✔ Conducted exhaustive gap analyses using Semrush, Ahrefs, and Google Search Console.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES & ACTIVE PROJECTS -->
+    <section id="projects" class="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto relative z-10">
+        <h2 class="text-2xl sm:text-4xl font-bold mb-3">Case Studies & Active Projects</h2>
+        <p class="text-slate-600 dark:text-[#94A3B8] mb-8 sm:mb-12 max-w-xl text-xs sm:text-base">A transparent look at the live ecosystems, strategy playbooks, and modern auditing frameworks I develop.</p>
+        
+        <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            <div class="p-5 sm:p-6 bg-white dark:bg-[#1E293B]/40 border border-slate-200 dark:border-[#1E293B] rounded-xl flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-sm">
+                <div><h3 class="text-base sm:text-xl font-bold mb-2">SEO Performance Audits</h3><p class="text-[11px] sm:text-sm text-slate-600 dark:text-[#94A3B8]">Comprehensive evaluation charts mapping Core Web Vitals and technical indexation bugs.</p></div>
+                <span class="text-[9px] font-semibold uppercase text-[#6366F1] mt-5 block">Strategy Asset</span>
+            </div>
+
+            <!-- Monocomsoft -->
+            <div class="p-5 sm:p-6 bg-white dark:bg-[#1E293B]/40 border border-slate-200 dark:border-[#1E293B] rounded-xl flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-sm border-l-4 border-l-[#06B6D4]">
+                <div><h3 class="text-base sm:text-xl font-bold mb-2 text-[#06B6D4]">Monocomsoft</h3><p class="text-[11px] sm:text-sm text-slate-600 dark:text-[#94A3B8]">Data extraction schemas and desktop layout automation blog strategy matrices targeting agentic web data workflows.</p></div>
+                <span class="text-[9px] font-semibold uppercase text-[#06B6D4] mt-5 block">Active Implementation</span>
+            </div>
+
+            <!-- Basketbot -->
+            <div class="p-5 sm:p-6 bg-white dark:bg-[#1E293B]/40 border border-slate-200 dark:border-[#1E293B] rounded-xl flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-sm">
+                <div><h3 class="text-base sm:text-xl font-bold mb-2">Basketbot Ecosystem</h3><p class="text-[11px] sm:text-sm text-slate-600 dark:text-[#94A3B8]">Structured digital keyword planning and targeted localized hyper-growth user acquisition blueprints.</p></div>
+                <span class="text-[9px] font-semibold uppercase text-[#6366F1] mt-5 block">Product Architecture</span>
+            </div>
+
+            <!-- Lyfsmile -->
+            <div class="p-5 sm:p-6 bg-white dark:bg-[#1E293B]/40 border border-slate-200 dark:border-[#1E293B] rounded-xl flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 shadow-sm border-l-4 border-l-[#8B5CF6]">
+                <div><h3 class="text-base sm:text-xl font-bold mb-2 text-[#8B5CF6]">Lyfsmile Platforms</h3><p class="text-[11px] sm:text-sm text-slate-600 dark:text-[#94A3B8]">Content architecture mapping and semantic SEO blueprints managing mental health feature research columns.</p></div>
+                <span class="text-[9px] font-semibold uppercase text-[#8B5CF6] mt-5 block">Live Editorial Authority</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- DYNAMIC BRAND REVEAL SHIMMER BLOCK -->
+    <section class="py-16 px-4 max-w-5xl mx-auto relative z-10 text-center">
+        <div class="bg-gradient-to-r from-slate-200 to-slate-100 dark:from-[#1E1B4B] dark:to-[#0F172A] border border-[#6366F1]/30 rounded-3xl p-8 sm:p-12 relative overflow-hidden group shadow-md">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-500/10 dark:via-white/5 to-transparent -translate-x-full group-hover:animate-[shimmer_2.5s_infinite] pointer-events-none"></div>
+            <div class="relative z-10">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-semibold bg-indigo-100 dark:bg-[#06B6D4]/10 text-indigo-700 dark:text-[#06B6D4] mb-4 animate-pulse">
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 dark:bg-[#06B6D4]"></span> Production Launching Soon
+                </span>
+                <h3 class="text-xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white mb-2">Something Big Is Coming Soon</h3>
+                <div class="inline-block font-mono text-xl sm:text-3xl text-indigo-600 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-[#06B6D4] dark:via-[#6366F1] dark:to-[#8B5CF6] font-extrabold tracking-widest border-b-2 border-indigo-500/30 dark:border-[#6366F1]/40 pb-2 hover:scale-105 transition-transform duration-300">
+                    Digicramps
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONAL PHILOSOPHY -->
+    <section class="py-16 sm:py-24 bg-gradient-to-b from-transparent via-[#1E1B4B]/10 to-transparent dark:via-[#1E1B4B]/30 px-4 text-center relative z-10">
+        <div class="max-w-3xl mx-auto">
+            <span class="text-4xl sm:text-5xl text-[#6366F1] font-serif block mb-2">“</span>
+            <p class="text-lg sm:text-3xl font-serif italic text-slate-900 dark:text-[#F8FAFC] leading-normal mb-6">
+                Lack of acknowledgement and events of individual's life leads to false alignment 
+            </p>
+            <div class="w-12 h-[2px] bg-[#6366F1] dark:bg-[#06B6D4] mx-auto mb-4"></div>
+            <span class="text-[10px] sm:text-xs uppercase tracking-widest text-slate-500 dark:text-[#94A3B8] font-medium block">— Yakshi Shakya</span>
+        </div>
+    </section>
+
+    <!-- LINKEDIN REEF FEED INTERFACE -->
+    <section id="insights" class="py-16 sm:py-24 px-4 sm:px-6 max-w-4xl mx-auto relative z-10">
+        <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-10 bg-[#0A66C2] rounded-lg flex items-center justify-center text-white font-black text-xl">in</div>
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Featured LinkedIn Publications</h2>
+                <p class="text-xs text-slate-500 dark:text-[#94A3B8]">Direct feed copies highlighting core campaign setups, AI integration vectors, and content mechanics.</p>
+            </div>
+        </div>
+        
+        <div class="space-y-6">
+            <!-- POST 1 -->
+            <div class="bg-white dark:bg-[#1E293B]/40 border border-slate-200 dark:border-[#1E293B] rounded-xl p-5 shadow-sm" x-data="{ expanded: false }">
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="https://i.ibb.co/Gvd2B8qH/Yakshi-Shakya.png" alt="Yakshi Shakya" class="w-10 h-10 rounded-full object-cover object-top border border-slate-300 dark:border-indigo-500">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Yakshi Shakya</h4>
+                        <p class="text-[10px] text-slate-400">SEO Technical and Content Writer @ Kreative Werbung Lab</p>
+                        <p class="text-[9px] text-slate-500">Public Feed • Recent</p>
+                    </div>
+                </div>
+                <div class="text-xs sm:text-sm text-slate-700 dark:text-[#94A3B8] leading-relaxed whitespace-pre-line">New to LinkedIn?
+Everyone else’s profile looks perfect, they have more connections, more engagement... and suddenly you start doubting yourself....let me help you....
+                    <span x-show="!expanded" class="text-indigo-600 dark:text-[#06B6D4] font-semibold cursor-pointer ml-1" @click="expanded = true">...read more</span>
+                    <div x-show="expanded" class="mt-2 pt-2 border-t border-slate-100 dark:border-[#334155]/40 space-y-2" x-cloak>
+#first take a deep breath. Welcome to adulting and you don't need to start with panic, and here's what you need to know, what I have learned in 3 years of this journey.
+
+1. Few weeks just observe what others are doing.
+
+2. Connect with companies that aligns with your interest.
+
+3. Don't #Connect with everybody (Excluding Business acquisitions), unnecessary connection leads to low performance.
+
+4. Don't pretend to be somebody else, of course we all learn and lead ourselves towards betterment, follow the traits, but don't replicate blindly.
+
+5. Know yourself better, your strength, weakness and most importantly recognize your #potential, which will eventually make you better understand the tactics of presenting yourself to this platform.
+
+And lastly you all need to good intent to start with. All the very best 👍
+
+#LinkedInTips #CareerGrowth #PersonalBranding #Networking #GrowthMindset #ProfessionalNetworking #CareerAdvice
+                        <button class="text-xs font-semibold text-slate-400 mt-3 block hover:underline" @click="expanded = false">Show less</button>
+                    </div>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 dark:border-[#334155]/40 flex justify-between text-slate-400 text-xs px-2">
+                    <button class="hover:text-[#6366F1] flex items-center gap-1">👍 Like</button><button class="hover:text-[#6366F1] flex items-center gap-1">💬 Comment</button><button class="hover:text-[#6366F1] flex items-center gap-1">🔁 Repost</button><button class="hover:text-[#6366F1] flex items-center gap-1">📤 Send</button>
+                </div>
+            </div>
+
+            <!-- POST 2 -->
+            <div class="bg-white dark:bg-[#1E293B]/40 border border-slate-200 dark:border-[#1E293B] rounded-xl p-5 shadow-sm" x-data="{ expanded: false }">
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="https://i.ibb.co/Gvd2B8qH/Yakshi-Shakya.png" alt="Yakshi Shakya" class="w-10 h-10 rounded-full object-cover object-top border border-slate-300 dark:border-indigo-500">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Yakshi Shakya</h4>
+                        <p class="text-[10px] text-slate-400">SEO Technical and Content Writer @ Kreative Werbung Lab</p>
+                        <p class="text-[9px] text-slate-500">Public Feed • 1yr</p>
+                    </div>
+                </div>
+                <div class="text-xs sm:text-sm text-slate-700 dark:text-[#94A3B8] leading-relaxed whitespace-pre-line">the laptop is a need 💻 .....
+A long while ago....
+                    <span x-show="!expanded" class="text-indigo-600 dark:text-[#06B6D4] font-semibold cursor-pointer ml-1" @click="expanded = true">...read more</span>
+                    <div x-show="expanded" class="mt-2 pt-2 border-t border-slate-100 dark:border-[#334155]/40 space-y-2" x-cloak>It's been 4 years since I bought my very first laptop (still working), and I never thought that this will going to change things so drastically and having I would never need it as I need it these days. Working from home is not such a huge thing, but for me it's like a piece of cake which I always wanted.
+
+I mean I have learnt so many things and explored so much with the help of my laptop about tech world because as a humanities student, people expect only theoretical knowledge and having no tech background but I have deep dive into #DIGITAL MARKETING and #WEB DESIGNING and learn few coding languages and also have #explored the tactics and essential for an Individual as a #corporate worker.
+
+While buying, I never thought these things, but now it just ...sometimes we ignore these small moments which sum up and create a huge exposure.
+                        <button class="text-xs font-semibold text-slate-400 mt-3 block hover:underline" @click="expanded = false">Show less</button>
+                    </div>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 dark:border-[#334155]/40 flex justify-between text-slate-400 text-xs px-2">
+                    <button class="hover:text-[#6366F1] flex items-center gap-1">👍 Like</button><button class="hover:text-[#6366F1] flex items-center gap-1">💬 Comment</button><button class="hover:text-[#6366F1] flex items-center gap-1">🔁 Repost</button><button class="hover:text-[#6366F1] flex items-center gap-1">📤 Send</button>
+                </div>
+            </div>
+
+            <!-- POST 3 -->
+            <div class="bg-white dark:bg-[#1E293B]/40 border border-slate-200 dark:border-[#1E293B] rounded-xl p-5 shadow-sm" x-data="{ expanded: false }">
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="https://i.ibb.co/Gvd2B8qH/Yakshi-Shakya.png" alt="Yakshi Shakya" class="w-10 h-10 rounded-full object-cover object-top border border-slate-300 dark:border-indigo-500">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Yakshi Shakya</h4>
+                        <p class="text-[10px] text-slate-400">SEO Technical and Content Writer @ Kreative Werbung Lab</p>
+                        <p class="text-[9px] text-slate-500">Public Feed • 1yr</p>
+                    </div>
+                </div>
+                <div class="text-xs sm:text-sm text-slate-700 dark:text-[#94A3B8] leading-relaxed whitespace-pre-line">Perfection is a myth....
+People often believe in perfection but the irony is, behind every perfectionist there is an imperfection that they know and gone through and it is only known by whom have excelled the art of imperfection.
+                    <span x-show="!expanded" class="text-indigo-600 dark:text-[#06B6D4] font-semibold cursor-pointer ml-1" @click="expanded = true">...read more</span>
+                    <div x-show="expanded" class="mt-2 pt-2 border-t border-slate-100 dark:border-[#334155]/40 space-y-2" x-cloak>Moreover, having an urge to be perfect is the process of learning and improving day by day.
+
+Though perfection is myth and imperfection is always there as the human tendency of infinite desires and expectations.
+                        <button class="text-xs font-semibold text-slate-400 mt-3 block hover:underline" @click="expanded = false">Show less</button>
+                    </div>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 dark:border-[#334155]/40 flex justify-between text-slate-400 text-xs px-2">
+                    <button class="hover:text-[#6366F1] flex items-center gap-1">👍 Like</button><button class="hover:text-[#6366F1] flex items-center gap-1">💬 Comment</button><button class="hover:text-[#6366F1] flex items-center gap-1">🔁 Repost</button><button class="hover:text-[#6366F1] flex items-center gap-1">📤 Send</button>
+                </div>
+            </div>
+
+            <!-- POST 4 -->
+            <div class="bg-white dark:bg-[#1E293B]/40 border border-slate-200 dark:border-[#1E293B] rounded-xl p-5 shadow-sm" x-data="{ expanded: false }">
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="https://i.ibb.co/Gvd2B8qH/Yakshi-Shakya.png" alt="Yakshi Shakya" class="w-10 h-10 rounded-full object-cover object-top border border-slate-300 dark:border-indigo-500">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Yakshi Shakya</h4>
+                        <p class="text-[10px] text-slate-400">SEO Technical and Content Writer @ Kreative Werbung Lab</p>
+                        <p class="text-[9px] text-slate-500">Public Feed • Recent</p>
+                    </div>
+                </div>
+                <div class="text-xs sm:text-sm text-slate-700 dark:text-[#94A3B8] leading-relaxed whitespace-pre-line">Depressed!!!!!!!!!!!
+This is for you 👇
+Many of the people around me kept on saying the same thing that they are depressed, anxious, and an overthinker.
+                    <span x-show="!expanded" class="text-indigo-600 dark:text-[#06B6D4] font-semibold cursor-pointer ml-1" @click="expanded = true">...read more</span>
+                    <div x-show="expanded" class="mt-2 pt-2 border-t border-slate-100 dark:border-[#334155]/40 space-y-2" x-cloak>I believe they are just consumed by social media and stupid trends on reels.
+
+Guys !! who is living, alive, and don't think......no one right?
+it's just what we think either it's positive, and productive, or negative and bullshit.
+
+I know many people will going to disagree with me in some contrast, they'll probably think that "You're saying all this because you are not depressed, not an overthinker "....else and else but I do feel low sometimes and overthink a lot about my future, and career, etc. But, that doesn't mean I am depressed.
+
+my only point is those who are depressed, they are way too busy #surviving trauma.
+
+I don't want to sound like revenge but need for understanding that, some bad days are normal, don't use the huge word depression for those because while you kept on saying this...... psychologically it will impact your physical and cognitive well-being too.
+
+I #appreciate the efforts of people who are depressed and you'll be fine soon 🤲
+#career #future #trauma #socialmedia #people
+                        <button class="text-xs font-semibold text-slate-400 mt-3 block hover:underline" @click="expanded = false">Show less</button>
+                    </div>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 dark:border-[#334155]/40 flex justify-between text-slate-400 text-xs px-2">
+                    <button class="hover:text-[#6366F1] flex items-center gap-1">👍 Like</button><button class="hover:text-[#6366F1] flex items-center gap-1">💬 Comment</button><button class="hover:text-[#6366F1] flex items-center gap-1">🔁 Repost</button><button class="hover:text-[#6366F1] flex items-center gap-1">📤 Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM GRID -->
+    <section id="contact" class="py-16 sm:py-24 px-4 sm:px-6 max-w-5xl mx-auto relative z-10"
+             x-data="{
+                loading: false,
+                submitForm(e) {
+                    this.loading = true;
+                    let formData = new FormData(e.target);
+                    fetch('/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: new URLSearchParams(formData).toString()
+                    })
+                    .then(() => {
+                        this.loading = false;
+                        showSuccessModal = true;
+                        e.target.reset();
+                    })
+                    .catch((error) => {
+                        this.loading = false;
+                        alert('Submission error: ' + error);
+                    });
+                }
+             }">
+        <div class="bg-white dark:bg-[#0B1222] border border-slate-200 dark:border-[#1E293B] rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-12 grid md:grid-cols-5 gap-8 sm:gap-12 items-center shadow-lg">
+            <div class="md:col-span-2 space-y-4">
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Let's create something remarkable.</h2>
+                <p class="text-slate-600 dark:text-[#94A3B8] text-sm sm:text-base leading-relaxed">Fill out the quick form to establish a direct secure message channel. Drop a line to align traffic setups now.</p>
+                <div class="pt-4 space-y-2 text-xs text-slate-500 dark:text-[#94A3B8]">
+                    <p><strong>Direct Line:</strong> 9990418416</p>
+                    <p><strong>Email:</strong> yakshishakya826@gmail.com</p>
+                </div>
+            </div>
+            
+            <form name="contact" method="POST" @submit.prevent="submitForm($event)" class="md:col-span-3 space-y-4 w-full">
+                <input type="hidden" name="form-name" value="contact" />
+                
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Your Name</label>
+                    <input type="text" name="name" required class="w-full p-3 text-sm bg-slate-50 dark:bg-[#0F172A] border border-slate-200 dark:border-[#1E293B] rounded-xl focus:border-[#6366F1] focus:outline-none dark:text-white" placeholder="John Doe">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Email Address</label>
+                    <input type="email" name="email" required class="w-full p-3 text-sm bg-slate-50 dark:bg-[#0F172A] border border-slate-200 dark:border-[#1E293B] rounded-xl focus:border-[#6366F1] focus:outline-none dark:text-white" placeholder="john@example.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Message</label>
+                    <textarea name="message" rows="4" required class="w-full p-3 text-sm bg-slate-50 dark:bg-[#0F172A] border border-slate-200 dark:border-[#1E293B] rounded-xl focus:border-[#6366F1] focus:outline-none dark:text-white" placeholder="Hey Yakshi, let's collaborate..."></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white rounded-xl text-sm font-semibold hover:opacity-90 shadow-md transition-opacity flex items-center justify-center gap-2 transform active:scale-98">
+                    <span x-show="!loading">Send Message 🚀</span>
+                    <span x-show="loading" x-cloak class="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- SUCCESS MESSAGE POP-UP MODAL -->
+    <div x-show="showSuccessModal" x-transition x-cloak class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex justify-center items-center p-4">
+        <div class="bg-white dark:bg-[#1E293B] border border-slate-200 dark:border-[#334155] rounded-2xl p-6 sm:p-8 max-w-sm w-full text-center space-y-4 shadow-2xl relative" @click.away="showSuccessModal = false">
+            <div class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto text-xl font-bold">✓</div>
+            <div class="space-y-1">
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Message Sent Successfully!</h3>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-[#94A3B8]">Thank you for reaching out, Yakshi. Your submission is received securely via Netlify Engine.</p>
+            </div>
+            <button @click="showSuccessModal = false" class="w-full py-2.5 bg-slate-900 dark:bg-[#6366F1] text-white rounded-xl text-xs font-semibold hover:opacity-90 transition-opacity">Close Window</button>
+        </div>
+    </div>
+
+    <!-- VERBATIM RESUME INJECTION PARSE FRAMEWORK -->
+    <div x-show="openResume" x-transition class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex justify-center items-center p-4" x-cloak>
+        <div class="bg-white text-slate-900 w-full max-w-4xl max-h-[90vh] rounded-2xl overflow-y-auto p-6 sm:p-10 relative" @click.away="openResume = false">
+            <div class="flex justify-between items-center border-b pb-4 mb-6 sticky top-0 bg-white z-10">
+                <h3 class="text-xl font-bold text-slate-900">Yakshi resume .pdf</h3>
+                <div class="flex gap-2">
+                    <button onclick="window.print()" class="px-4 py-2 bg-[#6366F1] text-white rounded-lg text-sm font-medium hover:bg-[#5152DF]">Print / Save PDF</button>
+                    <button @click="openResume = false" class="p-2 text-gray-500 hover:text-black"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                </div>
+            </div>
+            
+            <div id="resume-print-area" class="space-y-6 text-sm text-slate-800">
+                <div class="border-b pb-4">
+                    <h1 class="text-3xl font-extrabold tracking-tight">Yakshi Shakya</h1>
+                    <p class="text-indigo-600 font-semibold">SEO Technical and Content Writer</p>
+                    <p class="text-gray-500 mt-1">Email: yakshishakya826@gmail.com | Mobile: 9990418416 | New Delhi, India</p>
+                </div>
+                <div>
+                    <h2 class="text-base font-bold uppercase text-indigo-600 tracking-wider mb-2">Professional Summary</h2>
+                    <p class="text-gray-700 leading-relaxed">Experienced SEO Executive and Writer specializing in AI-accelerated SaaS workflows and content drafting frameworks. Proven ability to integrate data metrics with technical optimization models across multiple digital interfaces.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <h2 class="text-base font-bold uppercase text-indigo-600 tracking-wider mb-2">Core Competency Matrix</h2>
+                        <p class="text-gray-700">SEO Optimization, Keyword Mapping, Content Blueprints, Competitor Analysis, Google Search Console, Semrush, Ahrefs, Web Data Automation, SaaS Processing.</p>
+                    </div>
+                    <div>
+                        <h2 class="text-base font-bold uppercase text-indigo-600 tracking-wider mb-2">Education Background</h2>
+                        <ul class="space-y-1 text-gray-700">
+                            <li><strong>B.A. Degree:</strong> Deen Dayal Upadhyaya College (University of Delhi)</li>
+                            <li><strong>O Level Diploma:</strong> Bharati College, University of Delhi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-8 text-center text-[10px] tracking-wider text-slate-400 border-t border-slate-200 dark:border-[#1E293B]">
+        <p>© 2026 Yakshi Shakya. All rights reserved.</p>
+    </footer>
+
+    <style>@keyframes shimmer { 100% { transform: translateX(100%); } }</style>
+</body>
+</html>
